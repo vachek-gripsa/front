@@ -60,6 +60,8 @@ INSTALLATION:
 -npm init @eslint/config
 -npm install -D tailwindcss
 -npx tailwindcss init
+-npm i flowbite-react
+-npm install -D tailwindcss postcss autoprefixer
 -npm install moment --save
 
 TASK 1

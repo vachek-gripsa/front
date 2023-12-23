@@ -31,6 +31,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+       
         "@typescript-eslint/no-unused-vars": "warn",
         'react/react-in-jsx-scope': 'off',
         "@typescript-eslint/no-empty-function": "warn"
