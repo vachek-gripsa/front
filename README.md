@@ -44,3 +44,34 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+NAMING CONVENTIONS:
+-components => PascalCase
+-variables => camelCase
+-const => UPPERCASE_NAME 
+-custom hook => useSomeHookAction.
+
+
+
+INSTALLATION:
+
+-npm i axios
+-npm i react-router-dom
+-npm init @eslint/config
+-npm install -D tailwindcss
+-npx tailwindcss init
+-npm install moment --save
+
+TASK 1
+config:
+- connect to server => done
+- prettier =>  in progress
+- eslint => in progress
+- alias => in progress
+- folders structure => +
+
+TASK 2
+create:
+- registration form.
+- auth form.
+  
