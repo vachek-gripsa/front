@@ -9,6 +9,7 @@ export default function RootLayout() {
       <div>
         <Outlet />
       </div>
+      
     </>
   );
 }

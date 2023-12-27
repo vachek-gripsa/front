@@ -46,7 +46,7 @@ export default function RegistrationForm() {
   );
 }
 
-export async function action({ request }: any) {
+export async function action({ request }: any ) {
   // console.log(request, params);
   const formData = await request.formData();
   // console.log(formData.get('password')) //  method that can provide required field

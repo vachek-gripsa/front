@@ -45,6 +45,11 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+tsconfig updates:
+- "strictNullChecks": true - Strict Null Checks in TypeScript help catch potential issues related to null and undefined values at compile-time, reducing runtime errors.
+- "strictFunctionTypes" -means that the types of arguments passed to a function and the type of the value returned by the function must match the declared types, and any type mismatches are caught at compile-time rather than runtime.
+
+
 NAMING CONVENTIONS:
 -components => PascalCase
 -variables => camelCase
@@ -57,6 +62,7 @@ INSTALLATION:
 
 -npm i axios
 -npm i react-router-dom
+-npm install react-hook-form
 -npm init @eslint/config
 -npm install -D tailwindcss
 -npx tailwindcss init
@@ -71,6 +77,7 @@ config:
 - eslint => in progress
 - alias => in progress
 - folders structure => +
+  
 
 TASK 2
 create:

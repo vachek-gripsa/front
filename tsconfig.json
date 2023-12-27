@@ -18,17 +18,19 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "useUnknownInCatchVariables": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
     "baseUrl": ".",
-    // "paths": {
+    "paths": {
+      // "@ui/*": ["src/ui/*"]
     //   // "@assests/*": ["src/assets/*"],
     //   // "@components/*": ["src/components/*"],
     //   // "@hooks/*": ["src/hooks/*"],
     //   // "@lib/*": ["src/route/*"],
     //   // "@pages/*": ["src/pages/*"],
     //   // "@route/*": ["src/route/*"],
-    //   "@ui/*": ["./src/ui/*"]
     //   // "@utils/*": ["src/utils/*"]
-    // }
+    }
   },
   // "include": ["src"],
   "include": ["src/**/*.ts*"],
