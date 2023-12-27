@@ -5,7 +5,7 @@ export default function FirstAction() {
 
   function fetchData() {
     async function fetchMessage() {
-      const response = await fetch('http://localhost:4444/');
+      const response = await fetch('http://localhost:4444/test');
       const respData = await response.json();
       setServerData(respData.message);
     }

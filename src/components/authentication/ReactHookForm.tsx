@@ -25,12 +25,12 @@ export default function ReactHookForm() {
     const validObj = { name, nick, email, password };
     console.log(validObj);
 
-    const response = await fetch('https://localhost:4444/authentication', {
+    const response = await fetch('http://localhost:4444/api/auth/sign-up', {
       method: 'POST',
-      // body:JSON.stringify(validObj)
-      body: JSON.stringify(data),
+      body:JSON.stringify(validObj),
+      // body: JSON.stringify(data),
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       }
     });
     const responseData = await response.json();
@@ -84,7 +84,11 @@ export default function ReactHookForm() {
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm mx-auto">
       <p className="mb-5">
-        <label className={`${labelClass}`}>Name</label>
+        <label 
+        className={`${labelClass}`}
+        // className='text-[2vw]'
+
+        >Name</label>
         {/* register your input into the hook by invoking the "register" function */}
         {/* include validation with required or other standard HTML validation rules */}
         <input

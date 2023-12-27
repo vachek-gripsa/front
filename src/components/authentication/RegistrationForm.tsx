@@ -54,7 +54,7 @@ export async function action({ request }: any ) {
   console.log(postData);
   
   //  required backend to post data
-  // await fetch('https://localhost:4444/authentication', {
+  // await fetch('https://localhost:4444/api/auth/sign-up', {
   //   method: 'POST',
   //   body: JSON.stringify(postData),
   //   headers: {
