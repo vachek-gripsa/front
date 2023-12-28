@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Form, redirect } from 'react-router-dom';
 export default function RegistrationForm() {
   const textareaClass =
@@ -9,22 +10,34 @@ export default function RegistrationForm() {
     <>
       <Form method="post" className="max-w-sm mx-auto">
         <p className="mb-5">
-          <label htmlFor="name" className={`${labelClass}`}>
-            Name
+          <label htmlFor="firstName" className={`${labelClass}`}>
+            first Name
           </label>
-          <textarea name="name" id="name" rows={1} className={`${textareaClass}`} required />
+          <textarea
+            name="firstName"
+            id="firstName"
+            rows={1}
+            className={`${textareaClass}`}
+            required
+          />
         </p>
         <p className="mb-5">
-          <label htmlFor="nick" className={`${labelClass}`}>
-            Nick
+          <label htmlFor="lastName" className={`${labelClass}`}>
+            last Name
           </label>
-          <textarea name="nick" id="nick" rows={1} className={`${textareaClass}`} required />
+          <textarea
+            name="lastName"
+            id="lastName"
+            rows={1}
+            className={`${textareaClass}`}
+            required
+          />
         </p>
         <p className="mb-5">
-          <label htmlFor="mail" className={`${labelClass}`}>
+          <label htmlFor="email" className={`${labelClass}`}>
             Your E-mail
           </label>
-          <textarea name="mail" id="mail" rows={1} className={`${textareaClass}`} required />
+          <textarea name="email" id="email" rows={1} className={`${textareaClass}`} required />
         </p>
         <p className="mb-5">
           <label htmlFor="password" className={`${labelClass}`}>
@@ -46,23 +59,28 @@ export default function RegistrationForm() {
   );
 }
 
-export async function action({ request }: any ) {
+export async function action({ request }: any) {
   // console.log(request, params);
   const formData = await request.formData();
   // console.log(formData.get('password')) //  method that can provide required field
   const postData = Object.fromEntries(formData); // {name:'...', nick:'...'}
   console.log(postData);
-  
+
+  axios
+    .post('http://localhost:4444/api/auth/sign-up', {
+      postData
+    })
+    .then(result => console.log(result));
   //  required backend to post data
-  // await fetch('https://localhost:4444/api/auth/sign-up', {
-  //   method: 'POST',
+  // await fetch('//localhost:4444/api/auth/sign-up', {
+  //   method: 'post',
   //   body: JSON.stringify(postData),
   //   headers: {
   //     'Content-Type': 'application/json'
   //   }
   // });
 
-  return redirect('/');
+  // return redirect('/');
 
   return null;
 }
