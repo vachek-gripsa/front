@@ -5,10 +5,11 @@ import './index.css';
 import ErrorPage from './pages/ErrorPage';
 import About from './route/About';
 import Registration from './route/Registration';
-import { action as registrationAction } from './components/authentication/RegistrationForm'
+import { action as registrationAction } from './components/authentication/RegistrationForm';
 import FirstAction from './route/FirstAction';
 import RootLayout from './route/RootLayout';
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Provider>
 );

@@ -1,5 +1,12 @@
 import axios from 'axios';
 import { Form, redirect } from 'react-router-dom';
+
+interface MyRequest {
+  request: {
+    formData: () => Promise<FormData>;
+  };
+}
+
 export default function RegistrationForm() {
   const textareaClass =
     'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
@@ -59,17 +66,15 @@ export default function RegistrationForm() {
   );
 }
 
-export async function action({ request }: any) {
+export async function action({ request }: MyRequest) {
   // console.log(request, params);
   const formData = await request.formData();
   // console.log(formData.get('password')) //  method that can provide required field
   const postData = Object.fromEntries(formData); // {name:'...', nick:'...'}
   console.log(postData);
 
-  axios
-    .post('http://localhost:4444/api/auth/sign-up', {
-      postData
-    })
+  await axios
+    .post('http://localhost:4444/api/auth/sign-up', postData)
     .then(result => console.log(result));
   //  required backend to post data
   // await fetch('//localhost:4444/api/auth/sign-up', {

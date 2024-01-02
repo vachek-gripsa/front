@@ -11,31 +11,36 @@ export default function ReactHookFormSignIn() {
     register,
     handleSubmit,
     formState: {
-         errors, 
-         isSubmitting // track the current state during sending the
-        }
+      errors,
+      isSubmitting // track the current state during sending the
+    }
   } = useForm<FormInput>();
 
   const onSubmit: SubmitHandler<FormInput> = async data => {
     const { email, password } = data;
     console.log(data);
 
-    axios
-      .post('http://localhost:4444/api/auth/sign-in', {
-        email,
-        password
-      })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
-    // try {
-    //   const response = await axios.post('http://localhost:4444/api/auth/sign-in', {
+    // axios
+    //   .post('http://localhost:4444/api/auth/sign-in', {
     //     email,
     //     password
-    //   });
-    //   console.log(response.data);
-    // } catch (err) {
-    //   console.log('Error - ', err.message);
-    // }
+    //   })
+    //   .then(result => console.log(result))
+    //   .catch(err => console.log(err));
+
+    try {
+      const response = await axios.post(
+        'http://localhost:4444/api/auth/sign-in',
+        {
+          email,
+          password
+        },
+        // { withCredentials: true }
+      );
+      console.log(response);
+    } catch (err) {
+      console.log('Error - ', err.message);
+    }
   };
 
   const textareaClass =

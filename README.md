@@ -69,6 +69,7 @@ INSTALLATION:
 -npm i flowbite-react
 -npm install -D tailwindcss postcss autoprefixer
 -npm install moment --save
+-npm install @reduxjs/toolkit@1.9.5 react-redux@8.1.2
 
 TASK 1
 config:
