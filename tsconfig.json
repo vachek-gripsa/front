@@ -33,6 +33,6 @@
     }
   },
   // "include": ["src"],
-  "include": ["src/**/*.ts*"],
+  "include": ["src/**/*.ts*", "src/redux/testFetchSlice/testSlice.ts"],
   "exclude": ["node_modules"]
 }
